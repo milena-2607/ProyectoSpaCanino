@@ -8,4 +8,5 @@ Este proyecto se llevara acabo en la ciudad de Bogota llegando a ser reconocidos
  - terico
  - reseña historica
  - Amor perruno
+ - Juan el mas papi de BICTIA
  
