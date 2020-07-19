@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/Estilos.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="inicio.html">Bienvenidos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="QuienesSomos.html">Quiénes somos</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="Servicios.html">Servicios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Cotizacion.html">Cotizacion</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <h2><span class="text-info">Servicios</span></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="m-t-lg"><i class="pe-7s-airplay text-success icon-big"></i></h4>                
+                <p>Servicio personalizado,calificado y con una amplia experiencia en todas las razas,valoramos a nuestros clientes y los escuchamos, cubrimos sin prisa las necesidades individuales de cada mascota.
+                </p>
+            </div>            
+        </div>
+        
+        <section class="border-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3><span class="text-info">Baños</span></h3>
+                        <p> spa canino perfectamente equipado, con todas las comodidades para la Mascota y sus familiares con equipos de última tecnología, para un servicio excepcional para cada uno de nuestras Mascotas perrunas</p>
+                    </div>
+                    <div id="imagen1" class="col-md-6 text-center">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                        <div class="col-md-4">
+                            <h5><span class="text-info">Baño oro</span></h5>
+                            <p>Es Amor para tu mascota incluye Baño antipulgas con champú especializado para ellos, cepillado de Dientes, limpieza de oídos, corte de uñas, limpieza de glándulas anales, masaje facial y corporal, Cepillado alisado y cuidado especial de su pelaje a la vanguardia de estilos para cada ocasión</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5><span class="text-info">Baño plata</span></h5>
+                            <p>Es Ternura para tu mascota incluye Baño antipulgas con champú especializado para ellos, cepillado de Dientes, limpieza de oídos, corte de uñas, limpieza de glándulas anales, y cuidado especial de su pelaje a la vanguardia de estilos para cada ocasión</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5><span class="text-info">Baño bronce</span></h5>
+                            <p>Es Admiración para tu mascota incluye Baño antipulgas con champú especializado para ellos, limpieza de oídos, corte de uñas, limpieza de glándulas anales, y cuidado especial de su pelaje a la vanguardia de estilos para cada ocasión</p>
+                        </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="border-bottom">
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3><span class="text-info">Peluquería</span></h3>
+                        <p>Es la mejor peluquería canina en Bogotá. Un espacio ideal y adecuado donde el especialista en el área se encargará de prestarle la higiene correcta a tu mascota, con el objetivo de mantenerlo no solo limpio y sano si no también con la apariencia más fashion y atractiva.</p>
+                    </div>
+                    <div id="imagen2" class="col-md-6 text-center">
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br><br>
+        </section>
+        <section class="border-bottom">
+            <br>
+            <div class="container">
+                <div class="row show-grid">
+                    <div class="col-md-6">
+                        <h3><span class="text-info">Guardería</span></h3>
+                        <p>Es una guardería canina en la ciudad de Bogotá, donde buscamos pulir el vínculo que nos une a nuestras mascotas haciéndolas más armónicas y felices, contamos con el mejor servicio y cuidado para cada una de ellas sin necesidad de usar guacales ni dejarlos en espacios pequeños</p>
+                    </div>
+                    <div id="imagen3" class="col-md-6 text-center">
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br><br>
+        </section>
+        <footer class="page-footer text-center">
+            <p class="text-white bg-dark">Mi Mundo De Mascota: © 2020 Copyright</p>
+        </footer>
+    </div>
+
+    <script src="bootstrap/js/jquery-3.5.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            obteniendoConAjax();
+        });
+        
+        function obteniendoConAjax() {
+
+            $.get("https://dog.ceo/api/breeds/image/random", function( data ) {
+                const img = data.message;
+                var elem = document.createElement("img");
+                elem.setAttribute("src", img);
+                elem.setAttribute("height", "150");
+                elem.setAttribute("width", "150");
+                document.getElementById("imagen1").appendChild(elem);
+            });
+
+            $.get("https://dog.ceo/api/breeds/image/random", function( data ) {
+                const img = data.message;
+                var elem = document.createElement("img");
+                elem.setAttribute("src", img);
+                elem.setAttribute("height", "150");
+                elem.setAttribute("width", "150");
+                document.getElementById("imagen2").appendChild(elem);
+            });
+
+            $.get("https://dog.ceo/api/breeds/image/random", function( data ) {
+                const img = data.message;
+                var elem = document.createElement("img");
+                elem.setAttribute("src", img);
+                elem.setAttribute("height", "150");
+                elem.setAttribute("width", "150");
+                document.getElementById("imagen3").appendChild(elem);
+            });
+        }
+    </script>
+</body>
+
+</html>
